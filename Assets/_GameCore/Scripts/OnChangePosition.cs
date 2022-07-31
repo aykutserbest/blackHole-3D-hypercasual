@@ -8,8 +8,38 @@ public class OnChangePosition : MonoBehaviour
   public PolygonCollider2D hole2DCollider;
   public PolygonCollider2D ground2DCollider;
 
+  public Collider GroundCollider;
+  
   public MeshCollider generatedMeshCollider;
   private Mesh generatedMesh;
+
+  public float initialScale = 0.5f;
+  
+  private void Start()
+  {
+    GameObject[] AllGOs = FindObjectsOfType(typeof(GameObject)) as GameObject[];
+    foreach (var go in AllGOs)
+    {
+      if (go.layer == LayerMask.NameToLayer("Obstacles"))
+      {
+        Physics.IgnoreCollision(go.GetComponent<Collider>(), generatedMeshCollider,true);
+      }
+    }
+
+
+  }
+  
+  private void OnTriggerEnter(Collider other)
+  {
+    Physics.IgnoreCollision(other,GroundCollider , true);
+    Physics.IgnoreCollision(other,generatedMeshCollider,false);
+  }
+
+  private void OnTriggerExit(Collider other)
+  {
+    Physics.IgnoreCollision(other, GroundCollider, false);
+    Physics.IgnoreCollision(other,generatedMeshCollider,true);
+  }
 
   private void FixedUpdate()
   {
@@ -18,6 +48,7 @@ public class OnChangePosition : MonoBehaviour
       var transform1 = transform;
       transform1.hasChanged = false;
       hole2DCollider.transform.position = new Vector2(transform1.position.x,transform1.position.z);
+      hole2DCollider.transform.localScale = transform1.localScale * initialScale;
       MakeHole2D();
       Make3DMeshCollider();
     }
@@ -29,7 +60,7 @@ public class OnChangePosition : MonoBehaviour
 
     for (int i = 0; i < PointPositions.Length; i++)
     {
-      PointPositions[i] += (Vector2)hole2DCollider.transform.position;
+      PointPositions[i] = hole2DCollider.transform.TransformPoint(PointPositions[i]);
     }
 
     ground2DCollider.pathCount = 2;
