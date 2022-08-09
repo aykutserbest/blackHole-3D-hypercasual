@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c5fcdd14e5877d42bd02bd68eb3bbd0, type: 3}
+  m_Name: Level
+  m_EditorClassIdentifier: 
+  ExperienceTable:
+  - LevelNumber: 0
+    RequiredExpPoint: 0
+  - LevelNumber: 1
+    RequiredExpPoint: 1000
+  - LevelNumber: 2
+    RequiredExpPoint: 2000
+  - LevelNumber: 3
+    RequiredExpPoint: 4000
+  - LevelNumber: 4
+    RequiredExpPoint: 5000
+  - LevelNumber: 5
+    RequiredExpPoint: 7000
+  - LevelNumber: 6
+    RequiredExpPoint: 8000
+  - LevelNumber: 7
+    RequiredExpPoint: 9000
+  - LevelNumber: 8
+    RequiredExpPoint: 10000
+  - LevelNumber: 9
+    RequiredExpPoint: 11000
+  - LevelNumber: 10
+    RequiredExpPoint: 12000
