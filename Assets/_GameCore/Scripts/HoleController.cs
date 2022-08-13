@@ -14,7 +14,9 @@ public class HoleController : MonoBehaviour
     private int _speed=2 ;
     private int _characterCurrentExp;
     private int _characterLevel;
-    
+
+    public List<GameObject> collecttedList;
+
     void Start()
     {
         _gameManager = GameManager.Instance;

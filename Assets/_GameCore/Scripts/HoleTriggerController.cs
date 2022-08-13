@@ -11,5 +11,8 @@ public class HoleTriggerController : MonoBehaviour
 
         int obstacleExpPoint = other.GetComponent<ObstacleController>().experiencePoint;
         EventManager.HoleObstacleTriggerEnter?.Invoke(obstacleExpPoint);
+        
+        gameObject.GetComponentInParent<HoleController>().collecttedList.Add(other.gameObject);
+        
     }
 }
