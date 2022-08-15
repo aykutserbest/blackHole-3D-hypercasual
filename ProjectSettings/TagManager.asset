@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstacles
+  - DischargeArea
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - ShaderHole
   - ShaderHoleMask
   - HoleDeep
-  - 
+  - DischargeArea
   - 
   - 
   - 
