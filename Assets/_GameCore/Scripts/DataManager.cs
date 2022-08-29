@@ -11,6 +11,10 @@ public class DataManager : MonoBehaviour
    
    public int level = 1;
 
+   public int areaLevel;
+   
+   public int incomeLevel;
+
    //todo: playerpreff.
    //todo: so ya bağlayacağız ilk için datamanager olsun.
    
@@ -32,7 +36,11 @@ public class DataManager : MonoBehaviour
 
       return expPoint;
    }
-   
+
+   public void SaveAreaLevel(int newLevel)
+   {
+      areaLevel = newLevel;
+   }
    
    
    

@@ -39,7 +39,7 @@ public class LevelManager : MonoBehaviour
     private void CheckLevel()
     {
         var requiredExp = GetLevelReqiuredExpPoint();
-        Debug.Log("requiredExp : " + requiredExp);
+      //  Debug.Log("requiredExp : " + requiredExp);
         
         if (_characterCurrentExp >= requiredExp)
         {

@@ -21,6 +21,7 @@ public class HoleController : MonoBehaviour
     {
         _gameManager = GameManager.Instance;
         _playerInput = gameObject.GetComponent<PlayerInput>();
+        SetArea();
     }
     
     void Update()
@@ -31,4 +32,14 @@ public class HoleController : MonoBehaviour
         
         transform.DOMove(newPosition, Time.deltaTime);
     }
+
+    public void SetArea()
+    {
+        float areaLevel = DataManager.Instance.areaLevel;
+        areaLevel /= 2;
+        Debug.Log(areaLevel);
+        gameObject.transform.localScale = gameObject.transform.localScale * areaLevel;
+        
+    }
+    
 }
